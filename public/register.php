@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once '../config/database.php';
 
 if ($_POST) {
     $username = trim($_POST['username']);

@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once '../config/database.php';
 checkLogin();
 
 if ($_POST) {
