@@ -129,7 +129,7 @@ http://localhost:8000
 
 ### Main Page
 
-![Main Page](screenshots/home-page.png)
+![Main Page](screenshots/homepage.png)
 
 ### Dashboard
 
