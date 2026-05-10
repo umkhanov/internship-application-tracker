@@ -128,10 +128,12 @@ http://localhost:8000
 ## Screenshots
 
 ### Main Page
-Login and registration interface for users.
+
+![Main Page](screenshots/home-page.png)
 
 ### Dashboard
-Main panel where users can manage internship applications.
+
+![Dashboard](screenshots/dashboard.png)
 
 ---
 
