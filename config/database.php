@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-// Veritabanı bağlantı ayarları - HOSTING
-$host = 'localhost';
+// Database configuration
+$host = '127.0.0.1';
 $dbname = 'dbstorage22360859374';
-$username = 'username';
-$password = 'password';
+$username = 'root';
+$password = '';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
