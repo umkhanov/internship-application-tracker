@@ -1,84 +1,160 @@
 # Staj Başvuru Takip Sistemi
 
-Bu proje, öğrencilerin staj başvurularını düzenli bir şekilde takip etmelerini sağlayan web tabanlı bir uygulamadır. Kullanıcılar başvurdukları şirketleri ve pozisyonları kolayca yönetebilirler.
+A web-based internship application tracking system developed with PHP and MySQL.  
+This project helps students manage and track their internship applications in an organized way.
 
-## Proje Amacı
+---
 
-Öğrencilerin staj başvuru sürecinde karşılaştıkları en büyük sorunlardan biri, hangi şirkete ne zaman başvurduklarını ve başvurularının hangi aşamada olduğunu takip etmektir. Bu sistem, bu sorunu çözerek öğrencilerin staj arama sürecini daha organize hale getirmeyi amaçlar.
+## Project Purpose
 
-## Özellikler
+One of the biggest challenges students face during the internship application process is keeping track of:
+- which companies they applied to,
+- application dates,
+- and the current status of each application.
 
-### Kullanıcı Yönetimi
-- **Güvenli Kayıt Sistemi**: Şifreler hash'lenerek saklanır
-- **Session Tabanlı Giriş**: Güvenli oturum yönetimi
-- **Hesap Silme**: Kullanıcılar hesaplarını tamamen silebilir
+This system aims to simplify and organize the internship search process by providing an easy-to-use tracking platform.
 
-### Başvuru Yönetimi
-- **Başvuru Ekleme**: Yeni staj başvurularını sisteme kaydetme
-- **Başvuru Listeleme**: Tüm başvuruları düzenli tablo halinde görüntüleme
-- **Başvuru Düzenleme**: Mevcut başvuru bilgilerini güncelleme
-- **Başvuru Silme**: Artık gerekmeyen başvuruları kaldırma
+---
 
-## Teknolojiler
+## Features
 
-- **Backend**: PHP (framework kullanılmamıştır)
-- **Veritabanı**: MySQL
-- **Frontend**: HTML5, CSS3, JavaScript
-- **CSS Framework**: Bootstrap 5.3.0
-- **Güvenlik**: Password Hashing, Sessions
+### User Management
+- Secure registration system with password hashing
+- Session-based authentication
+- Account deletion functionality
 
-## Dosya Yapısı
+### Application Management
+- Add new internship applications
+- View all applications in a structured table
+- Edit existing application information
+- Delete unnecessary applications
 
+---
+
+## Technologies Used
+
+- **Backend:** PHP (without framework)
+- **Database:** MySQL
+- **Frontend:** HTML5, CSS3, JavaScript
+- **CSS Framework:** Bootstrap 5.3
+- **Security:** Password Hashing, Sessions
+
+---
+
+## Project Structure
+
+```text
+project/
+│
+├── public/
+│   ├── index.php
+│   ├── login.php
+│   ├── register.php
+│   ├── logout.php
+│   ├── dashboard.php
+│   ├── add.php
+│   ├── edit.php
+│   ├── delete.php
+│   └── delete_account.php
+│
+├── config/
+│   └── database.php
+│
+├── database/
+│   └── database.sql
+│
+├── screenshots/
+│
+├── assets/
+│
+└── README.md
 ```
-── config.php          # Veritabanı bağlantısı ve genel ayarlar
-── index.php           # Ana sayfa (giriş/kayıt formu)
-── login.php           # Giriş işlemi
-── register.php        # Kayıt işlemi
-── logout.php          # Çıkış işlemi
-── dashboard.php       # Ana panel (başvuruları listeleme)
-── add.php             # Yeni başvuru ekleme
-── edit.php            # Başvuru düzenleme
-── delete.php          # Başvuru silme
-── delete_account.php  # Hesap silme
+
+---
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/umkhanov/internship-application-tracker.git
 ```
 
-## Kullanım
+### 2. Start MySQL service
 
-### 1. Web Tarayıcısında Açma
-[Staj Başvuru Takip Sistemi](http://95.130.171.20/~st22360859374/)   
+### 3. Create a database
 
-### 2. Hesap Oluşturma
-- Ana sayfada "Kayıt Ol" butonuna tıklayın
-- Kullanıcı adı, e-posta ve şifre bilgilerinizi girin
-- Kayıt işlemi tamamlandıktan sonra otomatik olarak giriş yapılır
+```sql
+CREATE DATABASE dbstorage22360859374;
+```
 
-### 3. Başvuru Ekleme
-- Dashboard'da "Yeni Başvuru Ekle" butonuna tıklayın
-- Şirket adı, pozisyon, başvuru tarihi ve notları girin
-- "Başvuru Ekle" butonuna tıklayarak kaydedin
+### 4. Import the SQL file
 
-### 4. Başvuru Yönetimi
-- Başvurularınızı dashboard'da tablo halinde görüntüleyin
-- "Düzenle" butonu ile başvuru bilgilerini güncelleyin
-- "Sil" butonu ile gereksiz başvuruları kaldırın
+```bash
+mysql -u root dbstorage22360859374 < database/database.sql
+```
 
-## Demo Video
+### 5. Run the PHP development server
 
-[Demo Video - Staj Başvuru Takip Sistemi](https://youtu.be/i5z-z704ijk)
+```bash
+php -S localhost:8000 -t public
+```
 
-## Ekran Görüntüleri
+### 6. Open in browser
 
-### Ana Sayfa - Giriş/Kayıt Formu
-![Ana Sayfa](screenshots/homepage.png)
-<br>*Kullanıcıların giriş yapabileceği veya yeni hesap oluşturabileceği ana sayfa*
+```text
+http://localhost:8000
+```
 
-### Dashboard - Başvuru Listesi
-![Dashboard](screenshots/dashboard.png)
-*Kullanıcının tüm staj başvurularını görüntüleyebileceği ana panel*
+---
 
-### Teknik Notlar
+## Usage
 
-- PHP 7.4+ gereklidir
-- MySQL 5.7+ desteklenir
-- Bootstrap CDN üzerinden yüklenir
-- Tarayıcı JavaScript desteği gereklidir
+### Register an Account
+- Open the main page
+- Create a new account using username, email and password
+
+### Add Internship Applications
+- Click on **"Yeni Başvuru Ekle"**
+- Enter company name, position, application date and notes
+
+### Manage Applications
+- View all applications on the dashboard
+- Edit application information
+- Delete unnecessary applications
+
+---
+
+## Screenshots
+
+### Main Page
+Login and registration interface for users.
+
+### Dashboard
+Main panel where users can manage internship applications.
+
+---
+
+## Technical Notes
+
+- PHP 7.4+ required
+- MySQL 5.7+ supported
+- Bootstrap loaded via CDN
+- JavaScript-enabled browser required
+
+---
+
+## Future Improvements
+
+- Search and filtering functionality
+- Email notifications
+- Application statistics
+- Dark mode support
+- Admin dashboard
+
+---
+
+## Author
+
+Magomed Umkhanov  
+Computer Engineering Student
